@@ -1,2 +1,7 @@
 fastapi==0.116.1
 pymongo==4.14.1
+dependencies==7.7.1
+nltk==3.9.1
+dotenv==0.9.9
+pandas==2.3.1
+uvicorn==0.35.0
