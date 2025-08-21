@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from manager import Manager
-import uvicorn
+from app.manager import Manager
+
 
 manager = Manager()
 manager.run()
@@ -17,5 +17,4 @@ def get_data():
     return {"result": result}
 
 
-if __name__ == "__main__":
-    uvicorn.run(app)
+
