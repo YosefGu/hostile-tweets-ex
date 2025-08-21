@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: yosefgu-dev
+  name: hostile-tweets
+  annotations: {}
+spec:
+  selector:
+    matchLabels:
+      app: hostile-tweets
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hostile-tweets
+    spec:
+      containers:
+        - name: hostile-tweets-container
+          image: >-
+            yosigu/hostile-tweets:1.0
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          env: 
+            - name: MONGO_USER
+              value: IRGC 
+            - name: MONGO_PASSWORD
+              value: iraniraniran 
+            - name: MONGO_DB
+              value: IranMalDB
+      imagePullSecrets: []
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  paused: false

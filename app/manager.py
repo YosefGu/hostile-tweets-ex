@@ -1,5 +1,5 @@
-from fetcher import Fetcher
-from processor import Processor
+from app.fetcher import Fetcher
+from app.processor import Processor
 
 
 class Manager():
